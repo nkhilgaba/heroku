@@ -26,7 +26,7 @@ SECRET_KEY = '6!b6nw@f_+zdh@t+27(b35u609&6zead4a2kcb*0vwdo*61@ng'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['eddaemon.herokuapp.com']
 #for sending email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = EMAIL_USE_TLS
