@@ -1,0 +1,59 @@
+{% extends 'main/header.html'%}
+
+{% block content%}
+
+    {% load static %}  
+    
+    <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <br><br>
+        <!--  <div class="row right">
+            <h5 class="footer col s12 light">Welcome !</h5>
+          </div> -->
+        </div>
+      </div>
+      <div class="parallax">
+        <img src="{% static 'main/img/poster/background1.jpeg' %}"
+        class="responsive-img">
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="section">
+        <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center black-text"><i class="medium material-icons">insert_emoticon</i></h2>
+              <h5 class="center">About me</h5>
+                  <div id="about-me">
+
+                  <p id='content'>Welcome to my official site , I'm a developer , part-time blogger , tech-enthusiast and always-a-learner . I love to code to solve persistent problems and dunk right above them . 
+                  I also write <a href="/blog/">blogs </a>  occasionally on  genres ranging from tech to life hacks ( including DIY, how-to stuff) . 
+
+                  You can sign up <a href="/register ">here</a> to stay-tuned for my future blogs and  explicit content .
+
+                  
+                   <br><br>  I also co-founded a start-up  which provides rapid
+                   IT solutions  to businesses of all sizes .   
+                  You can check out some of my projects <a href="https://github.com/npneeraj">here</a>.      
+                  </p>
+                  
+                  </div>
+          <br><br>
+          <br><br>
+
+            </div>
+      </div>      
+      </div>
+    </div>
+
+
+    
+<!--  <div class="parallax-container valign-wrapper">
+    <div class="parallax"><img src="{% static 'main/img/poster/background3.jpg' %}"
+        class="responsive-img"></div>
+  </div> -->
+
+
+{% include "main/includes/footer.html"%}
+{% endblock %}

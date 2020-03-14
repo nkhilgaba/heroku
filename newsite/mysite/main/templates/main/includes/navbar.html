@@ -1,0 +1,32 @@
+
+
+  <nav class=" blue-grey darken-4" role="navigation">
+    <div class="nav-wrapper container">
+      <!-- <a id="logo-container" href="#" class="brand-logo">Logo</a> -->
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>      
+        <li><a href="/blog/">Blog</a></li>      
+        {% if user.is_authenticated %}
+          <li><a href="/user">{{user.username}}</a></li>
+          <li><a href="/logout">Logout</a></li>
+        {% else %}
+          <li><a href="/register">Sign up</a></li>
+          <li><a href="/login">Log in</a></li>
+        {% endif %}        
+
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="/">Home</a></li>      
+        <li><a href="/blog/">Blog</a></li>      
+        {% if user.is_authenticated %}
+          <li><a href="/user">{{user.username}}</a></li>
+          <li><a href="/logout">Logout</a></li>
+        {% else %}
+          <li><a href="/register">Sign up</a></li>
+          <li><a href="/login">Log in</a></li>
+        {% endif %}        
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>  

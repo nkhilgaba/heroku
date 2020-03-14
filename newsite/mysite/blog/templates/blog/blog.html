@@ -1,0 +1,36 @@
+{% extends 'main/header.html'%}
+{% block content %}
+
+    {% load static %}    
+
+
+	<div class ="row">
+        <div class="parallax-container">
+        <div class="row right">
+            <h5 class="footer col s12 light">Blogs !</h5>
+          </div>       
+        <div class="parallax">
+        <img src="{% static 'main/img/poster/blast.jpg' %}"
+        class="responsive-img">
+    </div>
+    </div>
+    <br>	   
+	   {% for post in object_list %}
+	        <div class="col s12 m6 l4">
+                <a href="/blog/{{ post.id}}", style="color:#000">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <div class="card-title"><h4>{{post.title}}</h4>
+                                <h6>{{post.summary}}</h6></div>           
+                            <br>
+
+                           <!-- <div class= "right-align"> <p><a href="/blog/{{ post.id}}"><button class="btn waves-effect waves-light" style="background-color:yellow; color:black">View</button></a></p>
+                           </div> -->
+	 					</div>
+        			</div>
+        		</a>	
+			</div>    
+		{% endfor %}
+	</div>
+
+{% endblock %}

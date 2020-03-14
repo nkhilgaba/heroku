@@ -1,0 +1,78 @@
+{% extends 'main/header.html'%}
+{% block content %}
+<div class ="container">
+	<div class="col s12 m4">
+		<h3>{{ post.title }}</h3>
+		<h6>  {{ post.date }}</h6>
+			<br>
+			{% if post.thumb  %}
+			 	<img src="{{post.thumb.url}}" class="responsive-img"> 
+			
+			{% endif %}
+			<br>
+			{{ post.content|safe}}
+			<br>
+			
+
+
+
+			<div class="click-to-toggle fixed-action-btn ">
+			    <a class="btn-floating btn-medium cyan">
+			      <i class="fa fa-share-alt"></i>
+			    </a>
+			    <ul>
+			    <!--  <li><a 
+		  href="javascript:fbshareCurrentPage()" target="_blank" alt="Share on Facebook" class="btn-floating white"><i style="color: blue;background-color: white" class="fa fa-Facebook" ></i></a></li> -->
+		  		
+			      <li><a href="javascript:share()"  class="btn-floating white" ><i style="color: blue;background-color: white" class="fa fa-telegram" aria-hidden="true"></i></a></li>
+			 
+			      <li><a href="" class="btn-floating white" onclick="return tweet()" ><i style="color:lightblue ;background-color: white" class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			 
+			      <li><a href="javascript:inshare()"class="btn-floating white"><i style="color: blue;" class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			 
+			    </ul>
+			  </div>
+
+	</div>	
+</div>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'up',
+      hoverEnabled: false
+    });
+  });</script> 
+   
+<script>
+function tweet() { 
+    var u = location.href;
+    var t="Check out this awesome blog by @niraj "; 
+    window.open('http://twitter.com/share?url='+encodeURIComponent(u)+'&text='+encodeURIComponent(t),'twitsharer','toolbar=0,status=0,width=626,height=436'); 
+    return false;    
+} 
+</script>
+
+<!--Telegram Share button Start-->
+<script>var link=location.href;
+share=function(){
+	location.href="tg://msg_url?url="+link ;
+
+}
+</script>
+
+<!--Linkedin -->
+<script>var link=location.href;
+inshare=function(){
+	
+	location.href="https://www.linkedin.com/shareArticle?mini=true&url="+link ;
+}
+</script>
+
+<!-- facebook -->
+<script>
+    function fbshareCurrentPage()
+    {window.open("https://www.facebook.com/sharer/sharer.php?u="+escape(window.location.href)+"&t="+document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false; }
+</script>
+
+{% endblock %}
