@@ -179,8 +179,8 @@ STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media_cdn")
 
 
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 django_heroku.settings(locals())
