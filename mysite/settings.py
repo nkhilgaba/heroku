@@ -25,7 +25,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #SECRET_KEY = '6!b6nw@f_+zdh@t+27(b35u609&6zead4a2kcb*0vwdo*61@ng'
 SECRET_KEY= os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG=(os.environ.get('DEBUG_VALUE')=='True')
 
 ALLOWED_HOSTS = ['eddaemon.herokuapp.com']
 #for sending email
@@ -168,13 +169,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-#STATICFILES_DIRS= [
-#    os.path.join(BASE_DIR , "static")
-#]
+STATICFILES_DIRS= None
 
 
 STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media_cdn")
+
+MIDDLEWARE_CLASSES=( 'whitenoise.middleware.WhiteNoiseMiddleware',)
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 django_heroku.settings(locals())

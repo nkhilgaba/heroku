@@ -9,3 +9,4 @@ websocket-client==0.56.0
 requests==2.21.0
 gunicorn==19.9.0
 django-heroku
+whitenoise
