@@ -95,6 +95,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -177,10 +178,9 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media_cdn")
 
-MIDDLEWARE_CLASSES=( 'whitenoise.middleware.WhiteNoiseMiddleware',)
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 django_heroku.settings(locals())
