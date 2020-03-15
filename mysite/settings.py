@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django_heroku
 from .email_info import EMAIL_USE_TLS,EMAIL_HOST,EMAIL_HOST_USER,EMAIL_HOST_PASSWORD,EMAIL_PORT
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -21,8 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6!b6nw@f_+zdh@t+27(b35u609&6zead4a2kcb*0vwdo*61@ng'
-
+#SECRET_KEY = '6!b6nw@f_+zdh@t+27(b35u609&6zead4a2kcb*0vwdo*61@ng'
+SECRET_KEY= os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -176,3 +177,4 @@ STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media_cdn")
 
 
+django_heroku.settings(locals())
