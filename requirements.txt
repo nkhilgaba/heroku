@@ -9,7 +9,7 @@ websocket-client==0.56.0
 requests==2.21.0
 gunicorn==19.9.0
 django-heroku
-whitenoise==version
-psycopg2==version
-psycopg2-binary==version
-pytz==version
+whitenoise
+psycopg2
+psycopg2-binary
+pytz
