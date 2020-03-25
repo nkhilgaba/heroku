@@ -1,4 +1,4 @@
-Django==2.1.5
+Django==2.2.10
 django-filebrowser-no-grappelli==3.7.8
 django-tinymce4-lite==1.7.4
 idna==2.8
